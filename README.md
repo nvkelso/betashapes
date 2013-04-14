@@ -120,19 +120,11 @@ Now let's vote by geography (assumes you have census geography file for city in 
 What's a "betashape"?
 ---------------------
 
-See:
+* [the shape of alpha](http://code.flickr.com/blog/2008/10/30/the-shape-of-alpha/)
+* [living in the donut hole](http://code.flickr.com/blog/2009/01/12/living-in-the-donut-hole/)
+* [flickr shapefiles public dataset 2.0](http://code.flickr.com/blog/2011/01/08/flickr-shapefiles-public-dataset-2-0/)
 
-    http://code.flickr.com/blog/2008/10/30/the-shape-of-alpha/
-
-also see:
-
-    http://code.flickr.com/blog/2009/01/12/living-in-the-donut-hole/
-
-and for good measure:
- 
-    http://code.flickr.com/blog/2011/01/08/flickr-shapefiles-public-dataset-2-0/
-
-Propers to Aaron Straup Cope for his ideas and encouragement.
+_Propers to Aaron Straup Cope for his ideas and encouragement._
 
 License
 -------
