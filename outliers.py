@@ -22,20 +22,23 @@ def median_distances(pts, aggregate=numpy.median):
 def mean_distances(pts):
     return median_distances(pts, numpy.mean)
 
-def load_points(point_file):
+def load_points(point_file, places_filter):
     places = {}
     count = 0
     for line in file(point_file):
         data = line.strip().split()
         place_id, lon, lat = data if len(data) == 3 else data[1:]
-        place_id = int(place_id)
-        point = (float(lon), float(lat))
-        pts = places.setdefault(place_id, set())
-        pts.add(point)
-        count += 1
-        if count % 1000 == 0:
-            print >>sys.stderr, "\rRead %d points in %d places." % (count, len(places)),
+        
+        if place_id in places_filter:
+            place_id = int(place_id)
+            point = (float(lon), float(lat))
+            pts = places.setdefault(place_id, set())
+            pts.add(point)
+            count += 1
+            if count % 1000 == 0:
+                print >>sys.stderr, "\rRead %d points in %d places." % (count, len(places)),
     print >>sys.stderr, "\rRead %d points in %d places." % (count, len(places))
+    #print >>sys.stderr, "\places: %s" % (places)
     return places
 
 def discard_outliers(places, threshold=MEDIAN_THRESHOLD):
