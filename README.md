@@ -1,7 +1,7 @@
-Betashapes
-==========
-created by Melissa Santos and Schuyler Erle
-(c) 2011 SimpleGeo, Inc.
+#Betashapes
+
+	created by Melissa Santos and Schuyler Erle
+	(c) 2011 SimpleGeo, Inc.
 
 What is this?
 -------------
@@ -11,7 +11,7 @@ dataset.
 
 See the blog post for an explanation:
 
-http://blog.simplegeo.com/2011/08/05/its-a-beautiful-day-in-the-neighborhood/
+* [its-a-beautiful-day-in-the-neighborhood](http://blog.simplegeo.com/2011/08/05/its-a-beautiful-day-in-the-neighborhood/)
 
 Why's it here?
 --------------
@@ -101,6 +101,25 @@ leaves_from_woeid.py
 
     Walks a table of GeoPlanet data in PostgreSQL and fetches all the leaves
     descending from a given WoE ID.
+
+
+Usage:
+-------
+
+###San Francisco
+
+Let's download a sampling of geocoded Flickr photos:
+
+'''bash
+grep ^2362930 data_berkeley/suburbs.txt | cut -f4 | xargs python geocrawlr.py > data_berkeley/photos_2362930.txt
+'''
+
+Now let's vote by geography (assumes you have census geography file for city in GeoJSON format):
+
+'''bash
+python blockr.py data_berkeley/suburbs.txt data_berkeley/blocks_2362930.json data_berkeley/photos_2362930.txt > data_berkeley/berkeley2.json
+'''
+
 
 What's a "betashape"?
 ---------------------
