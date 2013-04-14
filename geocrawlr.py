@@ -5,7 +5,7 @@ FLICKR_KEY    = os.environ["FLICKR_KEY"]
 FLICKR_SECRET = os.environ["FLICKR_SECRET"]
 
 START_PAGE = 1
-END_PAGE = 10
+END_PAGE = 200     #10 or 1000 doesn't matter in current implementation
 
 api = Flickr.API.API(FLICKR_KEY, FLICKR_SECRET)
 
@@ -13,8 +13,10 @@ for woe_id in map(int, sys.argv[1:]):
     print >>sys.stderr, "WOEID:", woe_id
     page = total_pages = START_PAGE
 
+    #Note 250 results per "page"
     while page <= total_pages:
         print >>sys.stderr, ">>> Reading %d of %d... " % (page, total_pages),
+        #http://www.flickr.com/services/api/flickr.photos.search.html
         request = Flickr.API.Request(
                     method="flickr.photos.search",
                     format="json", 
