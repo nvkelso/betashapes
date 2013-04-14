@@ -110,15 +110,11 @@ Usage:
 
 Let's download a sampling of geocoded Flickr photos:
 
-'''bash
-grep ^2362930 data_berkeley/suburbs.txt | cut -f4 | xargs python geocrawlr.py > data_berkeley/photos_2362930.txt
-'''
+	grep ^2362930 data_berkeley/suburbs.txt | cut -f4 | xargs python geocrawlr.py > data_berkeley/photos_2362930.txt
 
 Now let's vote by geography (assumes you have census geography file for city in GeoJSON format):
 
-'''bash
-python blockr.py data_berkeley/suburbs.txt data_berkeley/blocks_2362930.json data_berkeley/photos_2362930.txt > data_berkeley/berkeley2.json
-'''
+	python blockr.py data_berkeley/suburbs.txt data_berkeley/blocks_2362930.json data_berkeley/photos_2362930.txt > data_berkeley/berkeley2.json
 
 
 What's a "betashape"?
